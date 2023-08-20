@@ -1,0 +1,393 @@
+/* Global styles */
+:root {
+  --primary-color: #040e31;
+  --secondary-color: #fdebed;
+  --highlight-color: #d471ff;
+  --hover-color: #4975e9;
+  --neu-light: #f2f2f2; /* New Neumorphic color */
+  --neu-dark: #d4d4d4; /* New Neumorphic color */
+  --primary-font: "Trebuchet MS", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.d-flex {
+  display: flex;
+}
+
+body {
+  font-size: 18px;
+  text-align: center;
+  height: 100vh;
+  font-family: var(--primary-font);
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  padding-top: 50px; /* Adjust based on the height of your navbar */
+}
+
+/* Hero section styles */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  height: 60vh;
+  color: var(--secondary-color);
+  overflow: hidden;
+}
+
+.hero-success {
+  height: 100vh;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/heroBackground.png");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+}
+
+.hero-subtitle,
+.hero-date {
+  font-size: 1.5rem;
+  animation: fadeInUp 2s;
+}
+
+.hero-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--highlight-color);
+  color: var(--secondary-color);
+  font-size: 1rem;
+  text-decoration: none;
+  animation: pulse 2s infinite;
+}
+
+.hero-button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  background-color: var(--primary-color);
+  list-style-type: none;
+  padding: 0 10%;
+  overflow: hidden;
+  font-size: 18px;
+  /* position: relative; */
+  top: 0;
+  position: fixed;
+  z-index: 2;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: var(--highlight-color);
+}
+
+/* hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+
+/* Hamburger Icon */
+
+.hamburger span {
+  display: block;
+  background-color: var(--secondary-color);
+  height: 2px;
+  width: 25px;
+  margin: 4px auto;
+  transition: all 0-3s ease-in-out;
+}
+
+/* Text-section Styles */
+section#text-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 40px 10%;
+  flex-wrap: wrap;
+}
+
+div.text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+div.text-box ul li {
+  margin-bottom: 10px;
+}
+
+div.text-box ul li b {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+/* Form Section */
+
+.hero-content form {
+  width: 500px;
+  background-color: var(--secondary-color);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  min-width: 25%;
+  transition: all 0.3s ease;
+}
+
+form > h2 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #fff;
+  box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  box-shadow: inset 0px 2px 4px var(--hover-color);
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: var(--highlight-color);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Errors Styling */
+.error-message {
+  color: var(--highlight-color);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Testimonial Section */
+
+#testimonial-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  background-color: var(--secondary-color);
+  padding: 50px 0;
+}
+
+#testimonial-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  transition: transform 0.3s ease-in-out;
+
+  overflow: hidden;
+  justify-items: center;
+  padding: 20px 0;
+}
+
+.testimonial-card:nth-child(n + 4) {
+  display: none;
+}
+
+.testimonial-card {
+  padding: 1.5rem;
+  background: var(--neu-light);
+  border-radius: 1rem;
+  box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.2),
+    -8px -8px 16px 0 rgba(255, 255, 255, 0.5); /* Neumorphic box-shadow */
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  margin: 0 10px;
+}
+
+.testimonial-card:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2),
+    -2px -2px 2px rgba(255, 255, 255, 0.5); /* Hover effect */
+  transform: scale(1.05);
+}
+
+.user-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 1rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
+    -2px -2px 5px rgba(255, 255, 255, 0.5); /* Neumorphic effect on image */
+}
+
+.user-name {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-text {
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+.arrow {
+  max-width: min-content;
+  font-size: 2rem;
+  background: var(--primary-color);
+  border-radius: 50%;
+  padding: 0.5rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2),
+    -2px -2px 5px rgba(255, 255, 255, 0.5); /* Neumorphic effect on arrows */
+  transition: background 0.3s ease-in-out;
+}
+
+.footer {
+  margin-top: 20px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
+
+/* Animation Style */
+.hero-title,
+div.text-box,
+div.text-box h2,
+div.text-box p,
+div.text-box ul,
+div.text-box ul li,
+div.text-box ul li b,
+.error-message {
+  animation: fadeInDown 2s;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 800px) {
+  section#form-section {
+    flex-direction: column;
+  }
+
+  form,
+  div.text-box {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    display: none;
+  }
+
+  .navbar.responsive {
+    display: flex;
+    padding: 0;
+  }
+
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 2px;
+    left: 12px;
+    z-index: 4;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle,
+  .hero-date {
+    font-size: 1.2rem;
+  }
+}

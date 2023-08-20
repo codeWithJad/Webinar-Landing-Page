@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+
+    <section class="hero" id="hero">
+      <h1 class="hero-title">Dive in to Node JS</h1>
+      <h2 class="hero-subtitle">Online Webinar for Programmers</h2>
+      <p class="hero-date">08.08.2023</p>
+      <a href="#form" class="hero-button">Sign Up Now</a>
+    </section>
+
+    <section id="text-section">
+      <div class="text-box">
+        <h2>Unlock Your Potential with Our Node.js Webinar</h2>
+        <p>
+          In the fast-paced world of web development, keeping your skills sharp
+          is a must. That's why we're thrilled to invite you to our exclusive
+          online webinar focused on Node.js.
+        </p>
+        <h2>Why Attend This Webinar?</h2>
+        <ul style="text-align: left">
+          <li>
+            <b> In-depth Knowledge: </b>
+            Our webinar will delve deep into Node.js, covering everything from
+            the basics to advanced techniques. You'll gain a solid foundation
+            and understanding of this popular JavaScript runtime, essential for
+            modern back-end web development.
+          </li>
+
+          <li>
+            <b> Expert Guidance: </b>
+            Learn directly from industry experts who bring years of practical
+            experience to the table. They've been where you are and can provide
+            guidance that's rooted in real-world application.
+          </li>
+
+          <li>
+            <b> Interactive Learning: </b>
+            this isn't just a lecture; it's an interactive experience. Ask
+            questions, engage in discussions, and participate in activities
+            designed to reinforce what you've learned.
+          </li>
+
+          <li>
+            <b> Network: </b>
+            Connect with like-minded individuals who share your passion for
+            coding. Who knows, you might even meet your future collaborator!
+          </li>
+
+          <li>
+            <b> Free Resources: </b>
+            All attendees will receive exclusive resources to further aid in
+            their Node.js journey.
+          </li>
+        </ul>
+
+        <p>
+          With the online format, you can learn from the comfort of your home.
+          The knowledge you gain could open doors to new opportunities, helping
+          you to stand out in your current job or even transition to a new role.
+          The date? 08.08.2023. It's a day of intense learning, networking, and
+          growing. An experience that could redefine your career. So, what are
+          you waiting for? Spaces are limited. Fill in the form to reserve your
+          seat and dive deep into the world of Node.js. Your future self will
+          thank you.
+        </p>
+      </div>
+    </section>
+
+    <section id="form-hero-section" class="hero">
+      <div class="hero-content">
+        <form action="/submit" id="form" method="POST">
+          <h2>Sign Up for the Node.js Webinar Today</h2>
+          <div class="d-flex">
+            <input
+              type="text"
+              name="firstname"
+              placeholder="Firstname..."
+              required
+            />
+            <input
+              type="text"
+              name="lastname"
+              placeholder="Lastname..."
+              required
+            />
+          </div>
+
+          <input
+            type="text"
+            name="username"
+            placeholder="Username..."
+            required
+          />
+
+          <% if (typeof error !== 'undefined' && error.username) { %>
+          <p class="error-message"><%= error.username %></p>
+          <% } %>
+          <input type="email" name="email" placeholder="Email..." required />
+          <% if (typeof error !== 'undefined' && error.email) { %>
+          <p class="error-message"><%= error.email %></p>
+          <% } %>
+
+          <div class="d-flex">
+            <input
+              type="text"
+              name="company"
+              placeholder="Company..."
+              required
+            />
+            <input
+              type="text"
+              name="expertise"
+              placeholder="Expertise..."
+              required
+            />
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="testimonial-section">
+      <button id="arrow-left" class="arrow">&lt;</button>
+      <div id="testimonial-cards-container">
+        <div class="testimonial-card">
+          <img
+            src="https://randomuser.me/api/portraits/men/1.jpg"
+            alt="User Image - Testimonial"
+            class="user-image"
+          />
+          <h3 class="user-name">Alex Berg</h3>
+          <p class="testimonial-text">This Event has changed my Life!</p>
+        </div>
+
+        <div class="testimonial-card">
+          <img
+            src="https://randomuser.me/api/portraits/women/20.jpg"
+            alt="User"
+            class="user-image"
+          />
+          <h3 class="user-name">Sarah Hourmozi</h3>
+          <p class="testimonial-text">Node JS is sweetier than I thoaght!</p>
+        </div>
+
+        <div class="testimonial-card">
+          <img
+            src="https://randomuser.me/api/portraits/men/11.jpg"
+            alt="User"
+            class="user-image"
+          />
+          <h3 class="user-name">Pedro Rodrigous</h3>
+          <p class="testimonial-text">Mind Blowing !!!!</p>
+        </div>
+
+        <div class="testimonial-card">
+          <img
+            src="https://randomuser.me/api/portraits/men/22.jpg"
+            alt="User"
+            class="user-image"
+          />
+          <h3 class="user-name">Jad Smith</h3>
+          <p class="testimonial-text">The New Era requires JS :)</p>
+        </div>
+        <div class="testimonial-card">
+          <img
+            src="https://randomuser.me/api/portraits/men/12.jpg"
+            alt="User"
+            class="user-image"
+          />
+          <h3 class="user-name">Karim Ezz</h3>
+          <p class="testimonial-text">This Event has changed my Life!</p>
+        </div>
+      </div>
+      <button id="arrow-right" class="arrow">&gt;</button>
+    </section>
+
+    <%- include("./partials/footer.ejs") %>
+
+    <script src="/js/navbar.js"></script>
+    <script src="/js/slider.js"></script>
+  </body>
+</html>
